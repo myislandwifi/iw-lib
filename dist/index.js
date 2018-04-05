@@ -159,4 +159,3 @@ function createNewAsset(barcode) {
     asset.barcode = barcode;
     return asset;
 }
-//# sourceMappingURL=index.js.map

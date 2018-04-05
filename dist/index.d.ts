@@ -1,4 +1,4 @@
-declare enum BillState {
+declare module 'iw-lib';declare enum BillState {
     unpaid = "unpaid",
     paid = "paid",
 }

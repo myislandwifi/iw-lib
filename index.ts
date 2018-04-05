@@ -1,3 +1,5 @@
+declare module 'iw-lib';
+
 enum BillState {
     unpaid = "unpaid",
     paid = "paid"
