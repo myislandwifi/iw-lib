@@ -316,19 +316,19 @@ function createNewContract(id: string, createdDate: number, endsAt: number, agen
 
 
 function isDAILYContract(contractType: ContractType) {
-    return contractType.toString().toLowerCase() == ContractType.DAILY.toString().toLowerCase();
+    return contractType == ContractType.DAILY;
 };
 
 function isOVERNIGHTContract(contractType: ContractType) {
-    return contractType.toString().toLowerCase() == ContractType.DAILY.toString().toLowerCase();
+    return contractType == ContractType.DAILY;
 };
 
 function isWEEKLYContract(contractType: ContractType) {
-    return contractType.toString().toLowerCase() == ContractType.DAILY.toString().toLowerCase();
+    return contractType == ContractType.DAILY;
 };
 
 function isMONTHLYContract(contractType: ContractType) {
-    return contractType.toString().toLowerCase() == ContractType.DAILY.toString().toLowerCase();
+    return contractType == ContractType.DAILY;
 };
 
 function isDAILYOrOVERNIGHTContract(contractType: ContractType) {

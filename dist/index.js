@@ -135,19 +135,19 @@ function createNewContract(id, createdDate, endsAt, agentId) {
 }
 ;
 function isDAILYContract(contractType) {
-    return contractType.toString().toLowerCase() == ContractType.DAILY.toString().toLowerCase();
+    return contractType == ContractType.DAILY;
 }
 ;
 function isOVERNIGHTContract(contractType) {
-    return contractType.toString().toLowerCase() == ContractType.DAILY.toString().toLowerCase();
+    return contractType == ContractType.DAILY;
 }
 ;
 function isWEEKLYContract(contractType) {
-    return contractType.toString().toLowerCase() == ContractType.DAILY.toString().toLowerCase();
+    return contractType == ContractType.DAILY;
 }
 ;
 function isMONTHLYContract(contractType) {
-    return contractType.toString().toLowerCase() == ContractType.DAILY.toString().toLowerCase();
+    return contractType == ContractType.DAILY;
 }
 ;
 function isDAILYOrOVERNIGHTContract(contractType) {
@@ -159,3 +159,4 @@ function createNewAsset(barcode) {
     asset.barcode = barcode;
     return asset;
 }
+//# sourceMappingURL=index.js.map
