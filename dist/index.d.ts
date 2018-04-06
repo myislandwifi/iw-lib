@@ -36,6 +36,7 @@ export declare module iwlib {
         WEEKLY = "WEEKLY",
         MONTHLY = "MONTHLY",
         QUICK_CONNECT = "QUICK_CONNECT",
+        BUSINESS = "BUSINESS",
     }
     enum ContractState {
         draft = 100,

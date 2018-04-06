@@ -44,7 +44,8 @@ export module iwlib {
         MULTIPLE_DAYS = "MULTIPLE_DAYS",
         WEEKLY = "WEEKLY",
         MONTHLY = "MONTHLY",
-        QUICK_CONNECT = "QUICK_CONNECT"
+        QUICK_CONNECT = "QUICK_CONNECT",
+        BUSINESS = "BUSINESS"
     };
     
     export enum ContractState {

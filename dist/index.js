@@ -50,6 +50,7 @@ var iwlib;
         ContractType["WEEKLY"] = "WEEKLY";
         ContractType["MONTHLY"] = "MONTHLY";
         ContractType["QUICK_CONNECT"] = "QUICK_CONNECT";
+        ContractType["BUSINESS"] = "BUSINESS";
     })(ContractType = iwlib.ContractType || (iwlib.ContractType = {}));
     ;
     var ContractState;
