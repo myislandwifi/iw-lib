@@ -249,6 +249,8 @@ export module iwlib {
         stripeCustomerRef: string;
         notes: string;
         hide?: boolean;
+
+        assetsAllotted:number;
     }
     
     export interface CardInfo {

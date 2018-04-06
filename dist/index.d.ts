@@ -200,6 +200,7 @@ export declare module iwlib {
         stripeCustomerRef: string;
         notes: string;
         hide?: boolean;
+        assetsAllotted: number;
     }
     interface CardInfo {
         number: string;
