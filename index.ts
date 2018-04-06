@@ -230,7 +230,7 @@ export module iwlib {
     
         rentalCost: number;
         liabilityAmount: number;
-        paymentMethod: string;
+        paymentMethod: PaymentMethod;
         stripePaymentSource: string;
         stripePaymentSourceRef: string;
         subscriptionActive: boolean;
