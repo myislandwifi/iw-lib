@@ -161,6 +161,7 @@ export declare module iwlib {
         simExpirationDate: number;
         leaseCounter: number;
         contractRef: string;
+        customerRef: string;
         notes: string;
     }
     interface Customer {
