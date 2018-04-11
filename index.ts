@@ -78,7 +78,8 @@ export module iwlib {
     
     export enum PaymentMethod {
         card = "card",
-        cash = "cash"
+        cash = "cash",
+        invoice = "invoice"
     };
     
     export enum TransactionType {

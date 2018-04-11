@@ -64,6 +64,7 @@ export declare module iwlib {
     enum PaymentMethod {
         card = "card",
         cash = "cash",
+        invoice = "invoice",
     }
     enum TransactionType {
         charge = "charge",

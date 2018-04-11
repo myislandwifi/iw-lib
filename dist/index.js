@@ -88,6 +88,7 @@ var iwlib;
     (function (PaymentMethod) {
         PaymentMethod["card"] = "card";
         PaymentMethod["cash"] = "cash";
+        PaymentMethod["invoice"] = "invoice";
     })(PaymentMethod = iwlib.PaymentMethod || (iwlib.PaymentMethod = {}));
     ;
     var TransactionType;
