@@ -22,7 +22,6 @@ export declare module iwlib {
         screenBroken = "Screen Broken",
         unitHardReset = "Unit Hard Reset",
         other = "Other",
-        NONE = "NONE",
     }
     enum AgentActivityType {
         login = "login",
@@ -65,7 +64,6 @@ export declare module iwlib {
     enum PaymentMethod {
         card = "card",
         cash = "cash",
-        invoice = "invoice"
     }
     enum TransactionType {
         charge = "charge",
@@ -76,14 +74,17 @@ export declare module iwlib {
     }
     interface Roles {
         reader: boolean;
-        customer?: boolean;
         agent?: boolean;
-        tester?: boolean;
         manager?: boolean;
-        developer?: boolean;
         admin?: boolean;
     }
-    interface User {
+    interface DbRecord {
+        createdAt?: number;
+        createdAtDate?: Date;
+        updatedAt?: number;
+        updatedAtDate?: Date;
+    }
+    interface User extends DbRecord {
         id: string;
         email: string;
         roles: Roles;
@@ -92,7 +93,7 @@ export declare module iwlib {
         phone?: string;
         photoURL?: string;
     }
-    interface Transaction {
+    interface Transaction extends DbRecord {
         id: string;
         stripeId: string;
         customerRef: string;
@@ -103,13 +104,11 @@ export declare module iwlib {
         amount: number;
         type: TransactionType;
         refundForPaymentId: string;
-        createdAt: number;
-        updatedAt: number;
         isRefundable: boolean;
         isRefunded: boolean;
         error: {};
     }
-    interface StripeSubscription {
+    interface StripeSubscription extends DbRecord {
         id: string;
         customerRef: string;
         contractRef: string;
@@ -117,15 +116,12 @@ export declare module iwlib {
         transactionRef: string;
         amount: number;
         refundForPaymentId: string;
-        createdAt: number;
-        updatedAt: number;
         isCancelled: boolean;
         error: {};
     }
-    interface StripePaymentSource {
+    interface StripePaymentSource extends DbRecord {
         id: string;
         token: string;
-        card: any;
     }
     interface ContractEntitlement {
         active: boolean;
@@ -141,10 +137,9 @@ export declare module iwlib {
         changed: boolean;
         entitlements: ContractEntitlement[];
     }
-    interface Refund {
+    interface Refund extends DbRecord {
         id: string;
         amount: number;
-        createdAt: number;
         description: string;
     }
     interface QueryConfig {
@@ -154,22 +149,7 @@ export declare module iwlib {
         reverse: boolean;
         prepend: boolean;
     }
-    class Asset {
-        barcode: string;
-        imei: string;
-        sim: string;
-        state: AssetState;
-        updatedAt: number;
-        createdAt: number;
-        location: string;
-        simActivationDate: number;
-        simExpirationDate: number;
-        leaseCounter: number;
-        contractRef: string;
-        customerRef: string;
-        notes: string;
-    }
-    interface Customer {
+    interface Customer extends DbRecord {
         id: string;
         email: string;
         firstName: string;
@@ -177,7 +157,53 @@ export declare module iwlib {
         fullName: string;
         phone: string;
     }
-    class Contract {
+    interface CardInfo {
+        number: string;
+        exp_month: string;
+        exp_year: string;
+        address_zip: string;
+    }
+    interface Bill extends DbRecord {
+        id: string;
+        amountDue: number;
+        state: string;
+        dueDate: number;
+        depositRequired: boolean;
+        description: string;
+    }
+    interface AssetActivity extends DbRecord {
+        barcode: string;
+        activityTime: number;
+        action: string;
+        isAssetConditionSatisfactory: boolean;
+        isCustomerAtFault: boolean;
+        customerFaultReason: CustomerFaultReason;
+        customerFaultOtherText: string;
+        contractRef: string;
+        agentRef: string;
+        location: string;
+    }
+    interface AgentActivity extends DbRecord {
+        userEmail: string;
+        type: AgentActivityType;
+    }
+    class Asset implements DbRecord {
+        barcode: string;
+        imei: string;
+        sim: string;
+        state: AssetState;
+        location: string;
+        simActivationDate: number;
+        simExpirationDate: number;
+        leaseCounter: number;
+        contractRef: string;
+        notes: string;
+        updatedAt: number;
+        createdAt: number;
+        updatedAtDate: Date;
+        createdAtDate: Date;
+    }
+    class Contract implements DbRecord {
         id: string;
         signatureData: string;
         displayName: string;
@@ -185,12 +211,10 @@ export declare module iwlib {
         firstName: string;
         lastName: string;
         email: string;
-        createdAt: number;
-        updatedAt: number;
         endsAt: number;
         rentalCost: number;
         liabilityAmount: number;
-        paymentMethod: string;
+        paymentMethod?: PaymentMethod;
         stripePaymentSource: string;
         stripePaymentSourceRef: string;
         subscriptionActive: boolean;
@@ -208,38 +232,10 @@ export declare module iwlib {
         notes: string;
         hide?: boolean;
         assetsAllotted: number;
-    }
-    interface CardInfo {
-        number: string;
-        exp_month: string;
-        exp_year: string;
-        address_zip: string;
-    }
-    interface Bill {
-        id: string;
-        amountDue: number;
-        state: string;
-        dueDate: number;
-        depositRequired: boolean;
+        updatedAt: number;
         createdAt: number;
-        description: string;
-    }
-    interface AssetActivity {
-        barcode: string;
-        activityTime: number;
-        action: string;
-        isAssetConditionSatisfactory: boolean;
-        isCustomerAtFault: boolean;
-        customerFaultReason: CustomerFaultReason;
-        customerFaultOtherText: string;
-        contractRef: string;
-        agentRef: string;
-        location: string;
-    }
-    interface AgentActivity {
-        userEmail: string;
-        type: AgentActivityType;
-        createdAt: number;
+        updatedAtDate: Date;
+        createdAtDate: Date;
     }
     function AgentActivityCreate(userEmail: string, type: AgentActivityType, createdAt: number): AgentActivity;
     function createNewContract(id: string, createdDate: number, endsAt: number, agentId: string): Contract;

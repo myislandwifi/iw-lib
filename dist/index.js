@@ -105,18 +105,56 @@ var iwlib;
             this.imei = '';
             this.sim = '';
             this.state = AssetState.inventory;
-            this.updatedAt = 0;
-            this.createdAt = 0;
             this.location = '';
             this.simActivationDate = 0;
             this.simExpirationDate = 0;
             this.leaseCounter = 0;
             this.contractRef = '';
             this.notes = '';
+            this.updatedAt = 0;
+            this.createdAt = 0;
+            this.updatedAtDate = new Date();
+            this.createdAtDate = new Date();
         }
         return Asset;
     }());
     iwlib.Asset = Asset;
+    var Contract = /** @class */ (function () {
+        function Contract() {
+            this.id = '';
+            this.signatureData = '';
+            this.displayName = '';
+            this.location = '';
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.endsAt = 0;
+            this.rentalCost = 0;
+            this.liabilityAmount = 0;
+            this.stripePaymentSource = '';
+            this.stripePaymentSourceRef = '';
+            this.subscriptionActive = false;
+            this.contractType = ContractType.DAILY;
+            this.state = ContractState.draft;
+            this.substate = ContractSubstate.draft;
+            this.depositRequired = false;
+            this.customerRef = '';
+            this.barcode = '';
+            this.agentRef = '';
+            this.agentDisplayName = '';
+            this.managerRef = '';
+            this.source = '';
+            this.stripeCustomerRef = '';
+            this.notes = '';
+            this.assetsAllotted = 1;
+            this.updatedAt = 0;
+            this.createdAt = 0;
+            this.updatedAtDate = new Date();
+            this.createdAtDate = new Date();
+        }
+        return Contract;
+    }());
+    iwlib.Contract = Contract;
     function AgentActivityCreate(userEmail, type, createdAt) {
         var agentActivity = {};
         agentActivity.userEmail = userEmail;

@@ -96,8 +96,15 @@ export module iwlib {
         admin?: boolean;
     
     }
+
+    export interface DbRecord {
+        createdAt?:number;
+        createdAtDate?:Date;
+        updatedAt?: number;
+        updatedAtDate?: Date;
+    }
     
-    export interface User {
+    export interface User extends DbRecord {
         id: string;
         email: string;
         roles: Roles;
@@ -109,7 +116,7 @@ export module iwlib {
     
     }
     
-    export interface Transaction {
+    export interface Transaction extends DbRecord {
         id: string;
         stripeId: string;
         customerRef: string;
@@ -123,15 +130,12 @@ export module iwlib {
         type: TransactionType;
         refundForPaymentId: string;
     
-        createdAt: number;
-        updatedAt: number;
-    
         isRefundable: boolean;
         isRefunded: boolean;
         error: {};
     }
     
-    export interface StripeSubscription {
+    export interface StripeSubscription extends DbRecord {
         id: string;
         customerRef: string;
         contractRef: string;
@@ -142,14 +146,11 @@ export module iwlib {
     
         refundForPaymentId: string;
     
-        createdAt: number;
-        updatedAt: number;
-    
         isCancelled: boolean;
         error: {};
     }
     
-    export interface StripePaymentSource {
+    export interface StripePaymentSource extends DbRecord {
         id: string;
         token: string;
     }
@@ -175,10 +176,9 @@ export module iwlib {
     
     }
     
-    export interface Refund {
+    export interface Refund extends DbRecord {
         id: string;
         amount: number;
-        createdAt: number;
         description: string;
     }
     
@@ -190,67 +190,13 @@ export module iwlib {
         prepend: boolean // prepend to source?
     }
     
-    export class Asset {
-        barcode: string = '';
-        imei: string = '';
-        sim: string = '';
-        state: AssetState = AssetState.inventory;
-        updatedAt: number = 0;
-        createdAt: number = 0;
-        location: string = '';
-        simActivationDate: number = 0;
-        simExpirationDate: number = 0;
-        leaseCounter: number = 0;
-        contractRef: string = '';
-        notes: string = '';
-    }
-    
-    export interface Customer {
+    export interface Customer extends DbRecord {
         id: string;
         email: string;
         firstName: string;
         lastName: string;
         fullName: string;
         phone: string;
-    }
-    
-    
-    export declare class Contract {
-        id: string;
-        signatureData: string;
-    
-        displayName: string;
-        location: string;
-        firstName: string;
-        lastName: string;
-        email: string;
-        createdAt: number;
-        updatedAt: number;
-        endsAt: number;
-    
-        rentalCost: number;
-        liabilityAmount: number;
-        paymentMethod: PaymentMethod;
-        stripePaymentSource: string;
-        stripePaymentSourceRef: string;
-        subscriptionActive: boolean;
-    
-        contractType: ContractType;
-        state: ContractState;
-        substate: ContractSubstate;
-        depositRequired: boolean;
-    
-        customerRef: string;
-        barcode: string;
-        agentRef: string;
-        agentDisplayName: string;
-        managerRef: string;
-        source: string;
-        stripeCustomerRef: string;
-        notes: string;
-        hide?: boolean;
-
-        assetsAllotted:number;
     }
     
     export interface CardInfo {
@@ -262,18 +208,17 @@ export module iwlib {
     }
     
     
-    export interface Bill {
+    export interface Bill extends DbRecord {
         id: string;
         amountDue: number;
         state: string;
         dueDate: number;
         depositRequired: boolean;
-        createdAt: number;
         description: string;
     }
     
     
-    export interface AssetActivity {
+    export interface AssetActivity extends DbRecord {
         barcode: string;
         activityTime: number;
         action: string;
@@ -287,10 +232,68 @@ export module iwlib {
     }
     
     
-    export interface AgentActivity {
+    export interface AgentActivity extends DbRecord {
         userEmail: string;
         type: AgentActivityType;
-        createdAt: number;
+    }
+    
+    export class Asset implements DbRecord {
+        barcode: string = '';
+        imei: string = '';
+        sim: string = '';
+        state: AssetState = AssetState.inventory;
+        location: string = '';
+        simActivationDate: number = 0;
+        simExpirationDate: number = 0;
+        leaseCounter: number = 0;
+        contractRef: string = '';
+        notes: string = '';
+        updatedAt: number = 0;
+        createdAt: number = 0;
+        updatedAtDate: Date = new Date();
+        createdAtDate: Date = new Date();
+    }
+    
+    
+    export class Contract implements DbRecord {
+        id: string = '';
+        signatureData: string = '';
+    
+        displayName: string = '';
+        location: string = '';
+        firstName: string = '';
+        lastName: string = '';
+        email: string = '';
+        endsAt: number = 0;
+    
+        rentalCost: number = 0;
+        liabilityAmount: number = 0;
+        paymentMethod?: PaymentMethod;
+        stripePaymentSource: string = '';
+        stripePaymentSourceRef: string = '';
+        subscriptionActive: boolean = false;
+    
+        contractType: ContractType = ContractType.DAILY;
+        state: ContractState = ContractState.draft;
+        substate: ContractSubstate = ContractSubstate.draft;
+        depositRequired: boolean = false;
+    
+        customerRef: string = '';
+        barcode: string = '';
+        agentRef: string = '';
+        agentDisplayName: string = '';
+        managerRef: string = '';
+        source: string = '';
+        stripeCustomerRef: string = '';
+        notes: string = '';
+        hide?: boolean;
+
+        assetsAllotted:number = 1 ;
+
+        updatedAt: number = 0;
+        createdAt: number = 0;
+        updatedAtDate: Date = new Date();
+        createdAtDate: Date = new Date();
     }
     
     
