@@ -22,6 +22,7 @@ export declare module iwlib {
         screenBroken = "Screen Broken",
         unitHardReset = "Unit Hard Reset",
         other = "Other",
+        NONE = "NONE",
     }
     enum AgentActivityType {
         login = "login",
