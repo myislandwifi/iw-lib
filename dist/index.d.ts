@@ -95,6 +95,7 @@ export declare module iwlib {
         roles: Roles;
         firstName?: string;
         lastName?: string;
+        fullName?: string;
         phone?: string;
         photoURL?: string;
     }

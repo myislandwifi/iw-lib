@@ -115,6 +115,7 @@ export module iwlib {
     
         firstName?: string;
         lastName?: string;
+        fullName?: string;
         phone?: string;
         photoURL?: string;
     
