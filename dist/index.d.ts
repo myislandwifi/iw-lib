@@ -77,6 +77,9 @@ export declare module iwlib {
         agent?: boolean;
         manager?: boolean;
         admin?: boolean;
+        customer?: boolean;
+        developer?: boolean;
+        tester?: boolean;
     }
     interface DbRecord {
         createdAt?: number;

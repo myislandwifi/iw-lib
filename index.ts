@@ -94,7 +94,9 @@ export module iwlib {
         agent?: boolean;
         manager?: boolean;
         admin?: boolean;
-    
+        customer?: boolean;
+        developer?: boolean;
+        tester?: boolean;
     }
 
     export interface DbRecord {
