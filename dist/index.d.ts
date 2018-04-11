@@ -121,6 +121,7 @@ export declare module iwlib {
     interface StripePaymentSource {
         id: string;
         token: string;
+        card: any;
     }
     interface ContractEntitlement {
         active: boolean;
