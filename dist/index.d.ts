@@ -65,6 +65,7 @@ export declare module iwlib {
     enum PaymentMethod {
         card = "card",
         cash = "cash",
+        invoice = "invoice"
     }
     enum TransactionType {
         charge = "charge",
@@ -75,8 +76,11 @@ export declare module iwlib {
     }
     interface Roles {
         reader: boolean;
+        customer?: boolean;
         agent?: boolean;
+        tester?: boolean;
         manager?: boolean;
+        developer?: boolean;
         admin?: boolean;
     }
     interface User {
