@@ -99,6 +99,12 @@ var iwlib;
         TransactionType["breached"] = "breached";
     })(TransactionType = iwlib.TransactionType || (iwlib.TransactionType = {}));
     ;
+    var RolesTable = /** @class */ (function () {
+        function RolesTable() {
+        }
+        return RolesTable;
+    }());
+    iwlib.RolesTable = RolesTable;
     var Asset = /** @class */ (function () {
         function Asset() {
             this.barcode = '';

@@ -73,13 +73,15 @@ export declare module iwlib {
         breached = "breached",
     }
     interface Roles {
-        reader: boolean;
+        reader?: boolean;
         agent?: boolean;
         manager?: boolean;
         admin?: boolean;
         customer?: boolean;
         developer?: boolean;
         tester?: boolean;
+    }
+    class RolesTable implements Roles {
     }
     interface DbRecord {
         createdAt?: number;

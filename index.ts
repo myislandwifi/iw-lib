@@ -90,13 +90,15 @@ export module iwlib {
     };
     
     export interface Roles {
-        reader: boolean;
+        reader?: boolean;
         agent?: boolean;
         manager?: boolean;
         admin?: boolean;
         customer?: boolean;
         developer?: boolean;
         tester?: boolean;
+    }
+    export class RolesTable implements Roles{
     }
 
     export interface DbRecord {
