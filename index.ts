@@ -56,13 +56,13 @@ export module iwlib {
     };
     
     export enum ContractSubstate {
-        draft = "Draft",
-        signed = "Signed",
-        paymentProcessed = "Payment Processed",
-        active = "Active",
-        complete = "Complete",
-        breached = "Breached",
-        archived = "Archived"
+        draft = "DRAFT",
+        signed = "SIGNED",
+        paymentProcessed = "PAYMENT PROCESSED",
+        active = "ACTIVE",
+        complete = "COMPLETE",
+        breached = "BREACHED",
+        archived = "ARCHIVED"
     };
     
     export enum StoreLocationRegion {
@@ -77,9 +77,9 @@ export module iwlib {
     
     
     export enum PaymentMethod {
-        card = "card",
-        cash = "cash",
-        invoice = "invoice"
+        card = "CARD",
+        cash = "CASH",
+        invoice = "INVOICE"
     };
     
     export enum TransactionType {
