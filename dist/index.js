@@ -160,6 +160,7 @@ var iwlib;
             this.createdAt = 0;
             this.updatedAtDate = new Date();
             this.createdAtDate = new Date();
+            this.endsAtDate = new Date();
         }
         return Contract;
     }());

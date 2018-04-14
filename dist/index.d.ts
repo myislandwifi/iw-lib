@@ -245,6 +245,7 @@ export declare module iwlib {
         createdAt: number;
         updatedAtDate: Date;
         createdAtDate: Date;
+        endsAtDate: Date;
     }
     function AgentActivityCreate(userEmail: string, type: AgentActivityType, createdAt: number): AgentActivity;
     function createNewContract(id: string, createdDate: number, endsAt: number, agentId: string): Contract;

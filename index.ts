@@ -302,6 +302,7 @@ export module iwlib {
         createdAt: number = 0;
         updatedAtDate: Date = new Date();
         createdAtDate: Date = new Date();
+        endsAtDate: Date = new Date();
     }
     
     
