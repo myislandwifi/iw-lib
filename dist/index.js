@@ -32,6 +32,7 @@ var iwlib;
         CustomerFaultReason["screenBroken"] = "Screen Broken";
         CustomerFaultReason["unitHardReset"] = "Unit Hard Reset";
         CustomerFaultReason["other"] = "Other";
+        CustomerFaultReason["none"] = "None";
     })(CustomerFaultReason = iwlib.CustomerFaultReason || (iwlib.CustomerFaultReason = {}));
     ;
     var AgentActivityType;

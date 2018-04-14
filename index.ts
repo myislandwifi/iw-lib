@@ -26,7 +26,8 @@ export module iwlib {
         simCardRemoved = 'Sim Card Removed',
         screenBroken = 'Screen Broken',
         unitHardReset = 'Unit Hard Reset',
-        other = 'Other'
+        other = 'Other',
+        none = 'None'
     };
     
     
