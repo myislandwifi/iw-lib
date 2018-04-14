@@ -63,7 +63,8 @@ export module iwlib {
         active = "ACTIVE",
         complete = "COMPLETE",
         breached = "BREACHED",
-        archived = "ARCHIVED"
+        archived = "ARCHIVED",
+        resolved = "RESOLVED"
     };
     
     export enum StoreLocationRegion {

@@ -53,6 +53,7 @@ export declare module iwlib {
         complete = "COMPLETE",
         breached = "BREACHED",
         archived = "ARCHIVED",
+        resolved = "RESOLVED",
     }
     enum StoreLocationRegion {
         FREEPORT = "FREEPORT",

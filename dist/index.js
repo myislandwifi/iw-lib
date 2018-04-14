@@ -71,6 +71,7 @@ var iwlib;
         ContractSubstate["complete"] = "COMPLETE";
         ContractSubstate["breached"] = "BREACHED";
         ContractSubstate["archived"] = "ARCHIVED";
+        ContractSubstate["resolved"] = "RESOLVED";
     })(ContractSubstate = iwlib.ContractSubstate || (iwlib.ContractSubstate = {}));
     ;
     var StoreLocationRegion;
