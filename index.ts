@@ -300,6 +300,7 @@ export module iwlib {
         hide?: boolean;
 
         assetsAllotted:number = 1 ;
+        address:string = '';
 
         updatedAt: number = 0;
         createdAt: number = 0;

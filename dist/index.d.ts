@@ -244,6 +244,7 @@ export declare module iwlib {
         notes: string;
         hide?: boolean;
         assetsAllotted: number;
+        address: string;
         updatedAt: number;
         createdAt: number;
         updatedAtDate: Date;

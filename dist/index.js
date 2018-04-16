@@ -158,6 +158,7 @@ var iwlib;
             this.stripeCustomerRef = '';
             this.notes = '';
             this.assetsAllotted = 1;
+            this.address = '';
             this.updatedAt = 0;
             this.createdAt = 0;
             this.updatedAtDate = new Date();
