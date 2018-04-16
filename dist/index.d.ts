@@ -13,6 +13,7 @@ export declare module iwlib {
         missing = "Missing",
         nonreturn = "Nonreturn",
         damaged = "Damaged",
+        sold = "Sold",
     }
     enum CustomerFaultReason {
         waterDamage = "Water Damage",
@@ -165,6 +166,7 @@ export declare module iwlib {
         lastName: string;
         fullName: string;
         phone: string;
+        address: string;
     }
     interface CardInfo {
         number: string;
@@ -200,6 +202,7 @@ export declare module iwlib {
         barcode: string;
         imei: string;
         sim: string;
+        simActive: boolean;
         state: AssetState;
         location: string;
         simActivationDate: number;

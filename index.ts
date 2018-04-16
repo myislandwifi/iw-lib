@@ -15,7 +15,8 @@ export module iwlib {
         leased = 'Leased',
         missing = 'Missing',
         nonreturn = 'Nonreturn',
-        damaged = 'Damaged'
+        damaged = 'Damaged',
+        sold = 'Sold'
     };
     
     
@@ -205,6 +206,7 @@ export module iwlib {
         lastName: string;
         fullName: string;
         phone: string;
+        address: string;
     }
     
     export interface CardInfo {
@@ -249,6 +251,7 @@ export module iwlib {
         barcode: string = '';
         imei: string = '';
         sim: string = '';
+        simActive: boolean = true;
         state: AssetState = AssetState.inventory;
         location: string = '';
         simActivationDate: number = 0;
