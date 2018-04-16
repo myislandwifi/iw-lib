@@ -19,12 +19,8 @@
   },
   "homepage": "https://github.com/myislandwifi/iw-lib#readme",
   "devDependencies": {
-    "@types/pluralize": "0.0.28",
     "chai": "^4.1.2",
     "mocha": "^5.0.5",
     "typescript": "^2.8.1"
-  },
-  "dependencies": {
-    "pluralize": "^7.0.0"
   }
 }
